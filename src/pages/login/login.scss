@@ -1,0 +1,45 @@
+page-login {
+  .error-message
+  {
+    color: red;
+  }
+ .login-content
+ {
+
+  padding: 0px 16px;
+
+  .login-button {
+    background-color: $theme-color-1;
+  }
+   .alt-options
+   {
+     .button
+     {
+       margin: 0px;
+       padding: 0px;
+       font-size: 1.4rem;
+     }
+
+     .forgot-button
+     {
+       color: $white-d;
+
+       .button-inner
+       {
+         justify-content: flex-end;
+       }
+     }
+
+     .signup-button
+     {
+       font-weight: 500;
+       color: $theme-color-2;
+
+       .button-inner
+       {
+         justify-content: flex-start;
+       }
+     }
+   }
+ }
+}
