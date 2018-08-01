@@ -7,36 +7,33 @@
 <ion-header>
 
   <ion-navbar>
-      <ion-title>{{'SIGN_IN' | translate}}</ion-title>
-      <ion-buttons end>
-          <button color="theme-color-2" (click)="dismiss()" ion-button icon-only>
-            <ion-icon color="theme-color-2" name="close"></ion-icon>
-          </button>
-      </ion-buttons>
-    </ion-navbar>
+    <ion-title>{{'SIGN_IN' | translate}}</ion-title>
+  </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-  <div class="login-content">
-    <form class="login-form auth-form" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
-      <ion-item>
-        <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
-      </ion-item>
-      <button ion-button block class="auth-action-button login-button" type="submit" [disabled]="!loginForm.valid">{{'SIGN_IN' | translate}}</button>
-    </form>
-    <ion-row class="alt-options">
-      <ion-col no-padding width-50>
-        <button ion-button block clear class="signup-button" (click)="goToSignup()">{{'SIGN_UP' | translate}}</button>
-      </ion-col>
-      <ion-col no-padding width-50>
-      </ion-col>
-    </ion-row>
-    <label class="error-message">{{errorMessage}}</label>
-  </div>
+  <ion-card class="login-content card-theme">
+    <ion-card-content>
+      <form class="login-form auth-form" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+        <ion-item>
+          <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+        </ion-item>
+        <button ion-button block class="auth-action-button login-button" type="submit" [disabled]="!loginForm.valid">{{'SIGN_IN' | translate}}</button>
+      </form>
+      <ion-row class="alt-options">
+        <ion-col no-padding width-50>
+          <button ion-button block clear class="signup-button" (click)="goToSignup()">{{'SIGN_UP' | translate}}</button>
+        </ion-col>
+        <ion-col no-padding width-50>
+        </ion-col>
+      </ion-row>
+      <label class="error-message">{{errorMessage}}</label>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
   

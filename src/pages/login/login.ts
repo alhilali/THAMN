@@ -3,6 +3,7 @@ import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth.service';
+import { SignUpPage } from '../sign-up/sign-up';
 
 /**
  * Generated class for the LoginPage page.
@@ -41,18 +42,19 @@ export class LoginPage {
     const loadingSpinner = this.loadingCtrl.create();
     loadingSpinner.present();
     const loginInfo = await this.authProvider.login()
-    loadingSpinner.dismiss();
     setTimeout(() => { // For demo purposes
+      loadingSpinner.dismiss();
       if (loginInfo.token) {
         this.navCtrl.setRoot(TabsPage);
       } else {
         this.errorMessage = "Something was wrong!"
       }
-    }, 3000);
+    }, 1500);
   }
 
-  dismiss() {
-    this.navCtrl.setRoot(TabsPage);
+
+  goToSignup() {
+    this.navCtrl.push(SignUpPage);
   }
 
 }

@@ -4,6 +4,8 @@ export class User {
   email: string;
   name: string;
   mobile: string;
+  id?: string;
+  dob: string;
 }
 
 export class Credentials {

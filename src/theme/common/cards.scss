@@ -1,0 +1,9 @@
+@mixin card-styles($background, $color){
+	border-radius: 15px !important;
+	color: $color;
+	background-color: $background;
+}
+
+.card-theme {
+	@include card-styles(color($colors, card, base), color($colors, card, contrast));
+}

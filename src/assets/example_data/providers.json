@@ -1,0 +1,65 @@
+[
+	{
+		"name": "Buba Arabia",
+		"img": "./assets/imgs/providers/img1.jpg",
+		"description": "",
+		"price": "150"
+	},
+
+	{
+		"name": "Allied Cooperative Insurance Group",
+		"img": "/assets/imgs/providers/img2.jpg",
+		"description": "",
+		"price": "350"
+	},
+		
+	{
+		"name": "Walaa Cooperative Insurance Co.",
+		"img": "/assets/imgs/providers/img3.jpg",
+		"description": "",
+		"price": "450"
+	},
+		
+	{
+		"name": "Al-Ahlia for Cooperative Insurence",
+		"img": "/assets/imgs/providers/img4.jpg",
+		"description": "",
+		"price": "890"
+	},
+
+	{
+		"name": "Tawuniya Cooperative Insurance Co.",
+		"img": "/assets/imgs/providers/img5.jpg",
+		"description": "",
+		"price": "350"
+	},
+
+	{
+		"name": "Gulf General Cooperative Insurance Co.",
+		"img": "/assets/imgs/providers/img6.jpg",
+		"description": "",
+		"price": "250"
+	},
+
+	{
+		"name": "Saudi Indian Company for Coopertive Insurance (Wafa)",
+		"img": "/assets/imgs/providers/img7.jpg",
+		"description": "",
+		"price": "180"
+	},
+
+	
+	{
+		"name": "UnitedHealthcare Inc",
+		"img": "/assets/imgs/providers/img11.jpg",
+		"description": "",
+		"price": "890"
+	},
+
+	{
+		"name": "Aetna International",
+		"img": "/assets/imgs/providers/img12.jpg",
+		"description": "",
+		"price": "670"
+	}
+]

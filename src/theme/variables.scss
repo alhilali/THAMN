@@ -13,6 +13,7 @@ $app-direction: multi;
 
 
 @import "ionic.globals";
+@import url('https://fonts.googleapis.com/css?family=Tajawal');
 
 
 // Shared Variables
@@ -29,7 +30,7 @@ $white-c: darken($white, 12%);
 $white-d: darken($white, 24%);
 
 $theme-color-1: #64C004;
-$theme-color-2: #EEF9E0;
+$theme-color-2: rgb(162, 233, 70);
 $theme-color-3: #FFFFFF;
 
 $black: rgba(#000000, .8);
@@ -78,6 +79,10 @@ $colors: (
   tabs-navigation:(
     base: $white,
     contrast: $white-d
+  ),
+  card: (
+    base: $white,
+    contrast: $black
   )
 );
 

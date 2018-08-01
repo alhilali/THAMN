@@ -1,0 +1,55 @@
+page-welcome {
+
+  .app-info {
+    padding-top: 26px;
+  }
+
+  .toolbar-background {
+    border: 0 !important;
+  }
+  .content {
+    background-color: $theme-color-1
+  }
+
+  .app-info {
+    .title {
+      color: $white;
+      margin-bottom: 0px;
+    }
+
+    .subtitle {
+      color: $white;
+      margin-top: 0px;
+    }
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+
+    .lang-form {
+      width: 100%;
+
+      .lang-item {
+        background-color: $theme-color-1;
+        border: 0px;
+        color: $white;
+
+        .label {
+          color: $white;
+        }
+      }
+    }
+
+    .login-button {
+      background-color: #f3f3f3;
+      color: #386f00;
+      border: 1px solid #488e00;
+    }
+    
+    .signup-button {
+      background-color: $theme-color-2;
+    }
+  }
+}

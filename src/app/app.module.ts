@@ -7,22 +7,25 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
-
-// Providers
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { LanguageProvider } from '../providers/language/language.service';
 import { ContactUsPage } from '../pages/contact-us/contact-us';
 import { CheckoutPage } from '../pages/checkout/checkout';
 import { DetailsPage } from '../pages/details/details';
 import { ProfilePage } from '../pages/profile/profile';
+import { SignUpPage } from '../pages/sign-up/sign-up';
+import { WelcomePage } from '../pages/welcome/welcome';
+
+// Providers
+import { LanguageProvider } from '../providers/language/language.service';
+import { DatabaseProvider } from '../providers/database/database.service';
+import { AuthProvider } from '../providers/auth/auth.service';
 
 // Modules
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpModule } from '@angular/http';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { AuthProvider } from '../providers/auth/auth.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -38,6 +41,8 @@ export function createTranslateLoader(http: HttpClient) {
     CheckoutPage,
     DetailsPage,
     ProfilePage,
+    SignUpPage,
+    WelcomePage,
   ],
   imports: [
     BrowserModule,
@@ -64,13 +69,16 @@ export function createTranslateLoader(http: HttpClient) {
     CheckoutPage,
     DetailsPage,
     ProfilePage,
+    SignUpPage,
+    WelcomePage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LanguageProvider,
-    AuthProvider
+    AuthProvider,
+    DatabaseProvider
   ]
 })
 export class AppModule {}

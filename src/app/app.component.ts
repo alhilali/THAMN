@@ -12,8 +12,9 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  // rootPage:any = TabsPage;
-  rootPage:any = LoginPage;
+  // rootPage:any = WelcomePage;
+  // rootPage:any = LoginPage;
+  rootPage:any = TabsPage
 
   constructor(
     platform: Platform,

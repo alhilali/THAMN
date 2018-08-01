@@ -23,6 +23,24 @@ export class AuthProvider {
     .catch(this.handleError);
   }
 
+  findID(id: string): Promise<User>{
+    return this.http.get('./assets/example_data/users.json')
+    .toPromise()
+    .then(response => {
+      let users: User[] = response.json().response['users'] as User[];
+
+      for (let index = 0; index < users.length; index++) {
+        const user = users[index];
+        // console.log(user);
+        
+        if (user.id === id) return user;
+
+        if (index == users.length - 1) return null;
+      }
+    })
+    .catch(this.handleError);
+  }
+
   getProfile(): Promise<User>{
     return this.http.get('./assets/example_data/profile.json')
     .toPromise()

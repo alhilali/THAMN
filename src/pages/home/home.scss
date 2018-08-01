@@ -1,3 +1,335 @@
 page-home {
+  // background-color: $white-a;
 
+	ion-content, .content-ios {
+		background-color: $white-a;
+		// background-color: $theme-color-1;
+	}
+
+	ion-header {
+		@include header-styles(color($colors, header-alt, base), color($colors, header-alt, contrast));
+		.toolbar-background
+		{
+			border: none !important;
+		}
+	}
+
+	.listing-header
+	{
+		.header-logo
+		{
+			width: 34vw;
+		}
+
+		.active {
+			color: $theme-color-2;
+		}
+	}
+
+	.custom-controls {
+		position: absolute;
+		width: 100%;
+		z-index: 1;
+		transition: visibility 0s, opacity 0.2s linear;
+		opacity: 0;
+		
+		&.show {
+			opacity: 1;
+		}
+
+		.search-container
+		{
+			.search-toolbar
+			{
+				padding: 0px 10px;
+	
+				.toolbar-background
+				{
+					// background: color($colors, header, base);
+					// background-color: $theme-color-1;
+					background-color: $white-a;
+					border: none;
+				}
+	
+				&.transparent-background
+				{
+					.toolbar-background
+					{
+						background: transparent;
+						box-shadow: none;
+					}
+	
+					ion-searchbar.search-places-bar
+					{
+						.searchbar-input
+						{
+							background-color: $white;
+							margin-right: 3px;
+							padding-top: 20px;
+							padding-bottom: 20px;
+							direction: rtl;
+						}
+					}
+				}
+	
+				.bar-buttons
+				{
+					margin: 0px;
+	
+					.geolocation-button
+					{
+						color: $black-d;
+						margin-left: -3px;
+	
+						&.using-geolocation
+						{
+							color: $theme-color-1;
+						}
+					}
+				}
+	
+				ion-searchbar.search-places-bar
+				{
+					background: transparent;
+					padding: 10px 0px;
+					padding-left: 5px;
+					border: none;
+	
+					.searchbar-input
+					{
+						border-radius: 1.5rem;
+						color: $theme-color-2;
+						background-color: $white;
+						margin-right: 3px;
+						direction: rtl;
+					}
+	
+					.searchbar-search-icon {
+						@include ios-searchbar-icon($searchbar-ios-input-search-icon-svg, $theme-color-2);
+					}
+				}
+			}
+	
+			.search-results
+			{
+				padding: 10px;
+				padding-top: 0px;
+			}
+		}
+		
+		.filter-container 
+		{
+			ion-list 
+			{
+				margin-bottom: 0px;
+			}
+
+			.range-item {
+				background-color: $white-a;
+				// background-color: $theme-color-1;
+				// box-shadow: none;
+			}
+
+			.item-divider {
+				background-color: transparent;
+			}
+
+			.icon-row
+			{
+				justify-content: center;
+				font-size: 20px;
+			}
+			.rounded-tags
+			{
+				// background-color: $white;
+				// padding: 15px;
+				// @include element-shadow();
+		
+				.checkbox-tag
+				{
+					.item-inner
+					{
+						border-radius: 0.5rem;
+						background-color: $white;
+						// color: $white-d;
+						font-size: 1.1rem;
+					}
+				}
+			}
+		}
+
+		.location-container {
+			.accordion-list {
+				background: color($colors, light);
+				padding-bottom: 20px !important;
+				height: 50vh;
+				overflow: scroll;
+		
+				.list-header {
+					background: #f4f4f4;
+					.label {
+						margin: 0px;
+					}
+
+					ion-icon {
+						font-size: 20px;
+					}
+		
+					.list {
+						margin-bottom: 0px;
+					}
+				}
+		
+			}
+			.section {
+					background: #fff;
+					color: #000;
+					margin-bottom: 4px;
+			}
+			.section-active {
+					background: $theme-color-1;
+					color: #fff;
+			}
+	
+			.child {
+					background: #f4f4f4;
+					color: #000;
+					margin-bottom: 4px;
+			}
+			.child-item {
+					background: #f4f4f4;
+					// padding: 10px;
+					letter-spacing: 0px;
+			}
+			.label {
+					margin: 0px;
+			}
+		}
+	}
+
+	.listing-content
+	{
+		transition: margin 700ms;
+		&.push-for-search {
+			margin-top: 60px
+		}
+
+		&.push-for-filter {
+			margin-top: 210px
+		}
+
+		&.push-for-location {
+			margin-top: 55vh;
+		}
+
+		ion-slides {
+			height: 24vh;
+
+			.swiper-container {
+				background-color: white;
+				border-top-right-radius: 15px;
+				border-top-left-radius: 15px;
+			}
+			ion-slide {
+				align-items: flex-start;
+
+				img {
+					border-radius: 19px;
+					padding: 7px;
+					height: 100% !important;
+				}
+			}
+		}
+
+		.list-mini
+		{
+			@include layout-list-styles($theme-color-1, $white-d);
+
+			ion-list {
+				.list-item
+				{
+					.content-row
+					{
+						&.closed {
+							img {
+								-webkit-filter: grayscale(100%);
+								-moz-filter: grayscale(100%);
+								filter: grayscale(100%);
+							}
+						}
+						.item-title{
+							// overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: normal;
+						}
+
+						&.one-line
+						{
+							align-items: center;
+
+							.item-description
+							{
+								overflow: hidden;
+								text-overflow: ellipsis;
+								white-space: nowrap;
+							}
+						}
+
+						.item-icons {
+							letter-spacing: 5px;
+							padding-top: 11px;
+
+							ion-icon {
+								font-size: 20px;
+							}
+
+							.item-icon {
+								color: lightslategrey;
+							}
+						}
+
+						.item-end {
+							color: $white-d;
+							text-align: center;
+							align-self: center;
+
+							.label {
+								font-size: 1.0rem;
+								font-weight: 500;
+							}
+							.value {
+								font-size: 1.2rem;
+								font-weight: 400;
+							}
+						}
+					}
+				}
+			}
+
+			.closed-restaurants-button
+			{
+				margin: 20px 10px;
+				// margin-top: 20px;
+				width: 95%;
+	
+				@include call-to-action-button-styles(color($colors, button-alt, base), color($colors, button, contrast));
+			}
+		}
+	}
+
+	.ratings-list
+	{
+		@include rating-item-styles($theme-color-1, $theme-color-2);
+		height: 16px;
+
+		.rating-icon {
+			background-color: white;
+			color: gold;
+		}
+	}
+
+	.bold {
+		color: black;
+    font-weight: 300;
+	}
 }
