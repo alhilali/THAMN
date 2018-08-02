@@ -29,6 +29,8 @@ export class MyApp {
   pages: Array<{title: any, icon: string, component: any}>;
   pushPages: Array<{title: any, icon: string, component: any}>;
 
+  menuSide: string = 'left';
+
   constructor(
     platform: Platform,
     statusBar: StatusBar, 
@@ -53,10 +55,12 @@ export class MyApp {
     {
       if(event.lang == 'ar')
       {
+        this.menuSide = 'right';
         platform.setDir('rtl', true);
       }
       else
       {
+        this.menuSide = 'left';
         platform.setDir('ltr', true);
       }
 
