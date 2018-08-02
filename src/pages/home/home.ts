@@ -5,6 +5,8 @@ import { BannerModel } from '../../providers/database/database.models';
 import { DatabaseProvider } from '../../providers/database/database.service';
 import { DetailsPage } from '../details/details';
 import { ListPage } from '../list/list';
+import { RequestAccessPage } from '../request-access/request-access';
+import { ProfilePage } from '../profile/profile';
 
 
 @Component({
@@ -41,10 +43,14 @@ export class HomePage {
   }
 
   goToPage(banner: BannerModel) {
-    if (banner.type == 'provider') { // Go to provider details page
+    if (banner.type === 'provider') { // Go to provider details page
       this.nav.push(DetailsPage, { provider: banner })
-    } else if (banner.type == 'providers') { // Go to list of providers page
+    } else if (banner.type === 'providers') { // Go to list of providers page
       this.nav.push(ListPage)
+    } else if (banner.type === 'request-access') {
+      this.nav.push(RequestAccessPage);
+    } else if (banner.type === 'profile') {
+      this.nav.push(ProfilePage);
     }
   }
 

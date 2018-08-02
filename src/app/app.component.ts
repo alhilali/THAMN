@@ -82,7 +82,7 @@ export class MyApp {
       ).subscribe(data => {
         this.pages = [
           { title: data[0], icon: 'home', component: HomePage },
-          { title: data[1], icon: 'contacts', component: ProfilePage },
+          // { title: data[1], icon: 'contacts', component: ProfilePage },
           { title: data[2], icon: 'list', component: ListPage },
           { title: data[3], icon: 'information-circle', component: ContactUsPage },
           { title: data[4], icon: 'md-help', component: FaqPage }
@@ -101,9 +101,10 @@ export class MyApp {
         this.events.subscribe('user:activity', (type) => {
 
           if (type === 'login') {
-            // this.pages.splice(4, 5);
-            this.pages.splice(5, 6);
+            this.pages.splice(4, 5);
+            this.pages.push({ title: data[1], icon: 'contacts', component: ProfilePage });
           } else if (type == 'logout') {
+            this.pages.splice(4, 5);
             this.pages.push({ title: data[5], icon: 'log-in', component: LoginPage });
             this.pages.push({ title: data[6], icon: 'person-add', component: SignUpPage });
           }

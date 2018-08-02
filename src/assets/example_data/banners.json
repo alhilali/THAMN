@@ -14,27 +14,15 @@
 		"type": "providers"
   },
   {
-		"name": "",
+		"name": "Medical Records",
 		"img": "./assets/imgs/banners/image2.jpg",
 		"description": "",
-		"type": ""
+		"type": "request-access"
 	},
 	{
-		"name": "",
-		"img": "./assets/imgs/banners/image1.jpg",
+		"name": "Profile",
+		"img": "./assets/imgs/banners/image3.jpg",
 		"description": "",
-		"type": ""
-  },
-  {
-		"name": "Insurance Companies",
-		"img": "./assets/imgs/banners/image2.jpg",
-		"description": "",
-		"type": "providers"
-  },
-  {
-		"name": "Insurance Companies",
-		"img": "./assets/imgs/banners/image1.jpg",
-		"description": "",
-		"type": "providers"
+		"type": "profile"
   }
 ]

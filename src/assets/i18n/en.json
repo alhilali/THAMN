@@ -12,5 +12,8 @@
   "INSURANCE_COS": "Insuracne Companies",
   "CONTACT_US":"Contact Us",
   "ABOUT_US": "About Us",
-  "FAQ":"FAQs"
+  "FAQ":"FAQs",
+  "NAME": "Name",
+  "EMAIL": "Email",
+  "PHONE": "Mobile Phone"
 }

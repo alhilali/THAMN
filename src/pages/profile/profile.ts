@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageProvider } from '../../providers/language/language.service';
 import { AuthProvider } from '../../providers/auth/auth.service';
 import { User } from '../../providers/auth/auth.model';
 import { LanguageModel } from '../../providers/language/language.model';
-
-/**
- * Generated class for the ProfilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ListPage } from '../list/list';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @Component({
   selector: 'page-profile',
@@ -25,27 +20,24 @@ export class ProfilePage {
   profile: User;
   languages: Array<LanguageModel>;
 
-
-
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public loadingCtrl: LoadingController,
     public translate: TranslateService,
     public languageService: LanguageProvider,
-    public authService: AuthProvider) 
+    public authService: AuthProvider,
+    private camera: Camera
+  ) 
     {
       this.loading = this.loadingCtrl.create();
       this.languages = this.languageService.getLanguages();
 
       this.profileForm = new FormGroup({
-        name: new FormControl(),
-        location: new FormControl(),
-        email: new FormControl(),
-        phone: new FormControl(),
-        currency: new FormControl(),
-        notifications: new FormControl(),
-        language: new FormControl()
+        name: new FormControl('', Validators.required),
+        email: new FormControl('', Validators.required),
+        mobile: new FormControl('', Validators.required),
+        language: new FormControl('', Validators.required)
       });
 
   }
@@ -55,14 +47,12 @@ export class ProfilePage {
   }
 
   loadProfile() {
+    this.loading.present();
     this.authService.getProfile()
     .then(data => {
       console.log(data);
       
       this.profile = data;
-      // setValue: With setValue, you assign every form control value at once by passing in a data object whose properties exactly match the form model behind the FormGroup.
-      // patchValue: With patchValue, you can assign values to specific controls in a FormGroup by supplying an object of key/value pairs for just the controls of interest.
-      // More info: https://angular.io/docs/ts/latest/guide/reactive-forms.html#!#populate-the-form-model-with-_setvalue_-and-_patchvalue_
 
       let currentLang = this.translate.currentLang;
       console.log(currentLang);
@@ -70,13 +60,13 @@ export class ProfilePage {
 
       this.profileForm.patchValue({
         name: data.name,
-        location: "النفل",
         email: data.email,
-        phone: data.mobile,
-        currency: 'dollar',
-        notifications: true,
+        mobile: data.mobile,
         language: this.languages.filter(x => x.code == currentLang)
       });
+
+      console.log(this.profileForm);
+      
 
       this.loading.dismiss();
 
@@ -95,6 +85,27 @@ export class ProfilePage {
     }
     this.translate.setDefaultLang(language_to_set);
     this.translate.use(language_to_set);
+  }
+
+  goToInsuranceCos() {
+    this.navCtrl.push(ListPage);
+  }
+
+  uploadNewDocument() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.FILE_URI,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    
+    this.camera.getPicture(options).then((imageData) => {
+     // imageData is either a base64 encoded string or a file URI
+     // If it's base64 (DATA_URL):
+     let base64Image = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+     // Handle error
+    });
   }
 
 }

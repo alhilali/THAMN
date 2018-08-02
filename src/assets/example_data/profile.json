@@ -2,7 +2,23 @@
   "response": {
     "user_id": 1,
     "token": "dfhdkhfkdkf",
-    "email": "test@thamn.com",
-    "name": "Mohammed Ali"
+    "email": "mohammed@ali.com",
+    "name": "Mohammed Ali",
+    "mobile": "0500898033",
+    "insuranceInfo": {
+        "id": 1,
+        "name": "Buba Arabia",
+        "img": "./assets/imgs/providers/img1.jpg",
+        "price": "150",
+        "valid": true,
+        "date": "2018/08/15 - 2018/09/15",
+        "package":
+          {
+            "name": "Family Package",
+            "description": "This package covers all of your family members.",
+            "price": "450"
+          }
+    },
+    "personalCode": "1Q2W3E"
   }
 }

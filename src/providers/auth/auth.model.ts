@@ -1,3 +1,5 @@
+import { ProviderModel } from "../database/database.models";
+
 export class User {
   user_id: number;
   token: string;
@@ -6,6 +8,8 @@ export class User {
   mobile: string;
   id?: string;
   dob: string;
+  insuranceInfo?: ProviderModel;
+  personalCode?: number;
 }
 
 export class Credentials {
