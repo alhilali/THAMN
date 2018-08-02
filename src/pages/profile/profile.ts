@@ -8,6 +8,7 @@ import { User } from '../../providers/auth/auth.model';
 import { LanguageModel } from '../../providers/language/language.model';
 import { ListPage } from '../list/list';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { ViewDocumentPage } from '../view-document/view-document';
 
 @Component({
   selector: 'page-profile',
@@ -123,6 +124,10 @@ export class ProfilePage {
     }, (err) => {
      // Handle error
     });
+  }
+
+  goToDocument() {
+    this.navCtrl.push(ViewDocumentPage);
   }
 
   dismiss() {

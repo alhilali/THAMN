@@ -77,9 +77,9 @@
     <div *ngIf="profile" class="profile-form">
         <!-- <p text-center>Here you can attach your medical records.</p> -->
         <p *ngIf="type !== 'company' && profile.personalCode" text-center>Use this code to share your documents with medical providers: <span class="bold" bold>{{profile.personalCode}}</span></p>
-        <ion-list *ngIf="profile.files" class="user-data-content">
+        <ion-list *ngIf="profile.files" class="user-data-content" padding-vertical>
         <ion-row *ngFor="let file of profile.files" ion-item no-padding class="content-row">
-            <ion-col no-padding width-70 class="item-content">
+            <ion-col no-padding width-70 class="item-content" (click)="goToDocument()">
               <h3 class="item-title">{{file.name}}</h3>
               <p class="item-description"></p>
             </ion-col>

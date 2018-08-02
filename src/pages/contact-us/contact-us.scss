@@ -1,3 +1,10 @@
 page-contact-us {
-
+  ion-card-header {
+    padding-top: 16px !important;
+    padding-left: 23px !important;
+    padding-right: 23px !important;
+    color: white !important;
+    background-color: $theme-color-2;
+    margin-bottom: 10px;
+  }
 }
