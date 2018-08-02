@@ -98,6 +98,7 @@ export class HomePage {
             text: data[2],
             handler: data => {
               console.log(data);
+              this.currentLang = data;
               this.translate.setDefaultLang(data);
               this.translate.use(data);
             }

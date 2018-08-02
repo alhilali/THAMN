@@ -20,5 +20,10 @@
   "VIEW_DOCUMENT": "View Document",
   "REQUEST_INFO": "In order to have access to medical records for patient, please enter secret code.",
   "ID_NOTE": "ID can be a national ID/Passport/Iqama number.",
-  "ID_DETECT_INFO": "Our system will try to fetch your information using your ID."
+  "ID_DETECT_INFO": "Our system will try to fetch your information using your ID.",
+  "provider": "Recomended",
+  "providers": "Insurance Companies",
+  "request-access": "Medical Records",
+  "language": "Language",
+  "ADVERT": "Advertisement"
 }

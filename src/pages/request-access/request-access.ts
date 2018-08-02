@@ -52,8 +52,9 @@ export class RequestAccessPage {
   }
 
   showProfile(userInfo: User) {
-    const modal = this.modal.create(ProfilePage, {userInfo: userInfo});
-    modal.present();
+    // const modal = this.modal.create(ProfilePage, {userInfo: userInfo});
+    // modal.present();
+    this.navCtrl.push(ProfilePage, {userInfo: userInfo});
   }
 
 }

@@ -19,14 +19,14 @@
       <ion-col ion-item class="provider-card" col-6 [ngClass]="{'col-6': i != 0}" *ngFor="let banner of banners; let i = index" (click)="goToPage(banner)" [ngStyle]="{'background-image': 'url('+banner.img+')'}">
         <div class="top-bar">
           <ion-row>
-            <h3 class="item-title">{{banner.name}}</h3>
+            <h3 class="item-title">{{banner.type | translate}}</h3>
           </ion-row>
         </div>
       </ion-col>
       <ion-col class="provider-card ad" col-12>
         <div class="top-bar">
           <ion-row>
-            <h3 class="item-title">Advertisement</h3>
+            <h3 class="item-title">{{'ADVERT' | translate}}</h3>
           </ion-row>
         </div>
       </ion-col>
