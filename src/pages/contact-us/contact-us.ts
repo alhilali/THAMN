@@ -13,12 +13,17 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'contact-us.html',
 })
 export class ContactUsPage {
-
+  chooseTypeClicked : boolean;
+showHideButtons(): void {
+  this.chooseTypeClicked = !this.chooseTypeClicked;
+}
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContactUsPage');
   }
+
 
 }
