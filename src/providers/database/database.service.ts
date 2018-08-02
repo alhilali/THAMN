@@ -21,6 +21,17 @@ export class DatabaseProvider {
      .catch(this.handleError);
   }
 
+  getProvider(id: number): Promise<ProviderModel> {
+    return this.http.get('./assets/example_data/providers.json')
+     .toPromise()
+     .then(response => {
+      const providers = response.json() as ProviderModel[];
+      const provider = providers.find((e) => e.id == id);
+      return provider;
+     })
+     .catch(this.handleError);
+  }
+
   getBanners(): Promise<BannerModel[]> {
     return this.http.get('./assets/example_data/banners.json')
      .toPromise()

@@ -106,7 +106,6 @@
           <ion-list>
             <button class="list-item" ion-item *ngFor="let provider of providers" (click)="goToProvider(provider)">
               <ion-row no-padding class="content-row">
-                <!-- You can limit the rows of the description by using the class one-line. If you remove it, all the content from the row will be shown -->
                 <ion-col no-padding width-18 class="item-avatar">
                   <img class="avatar-image" [src]="provider.img">
                 </ion-col>
@@ -127,7 +126,7 @@
                 </ion-col>
                 <ion-col class="item-end" no-padding width-20>
                     <h6 class="label">Starting From:</h6>
-                    <h5 class="value"><span class="bold">{{provider.price}}</span></h5>
+                    <h4 class="value"><span class="bold">{{provider.price}}</span></h4>
                 </ion-col>
               </ion-row>
             </button>
