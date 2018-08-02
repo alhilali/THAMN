@@ -24,7 +24,7 @@ export class DetailsPage {
   ];
 
   total: number;
-
+  name: string;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -56,13 +56,14 @@ export class DetailsPage {
       if (checked) {
         const val = Number(this.provider.packages[index].price);
         console.log(val);
-        
+        const name = String(this.provider.packages[index].name);
+        console.log(name);
+        this.name = name;
         this.total += val;
       }
     }
   }
 
   pay() {
-    this.navCtrl.push(CheckoutPage, {provider: this.provider, total: this.total});
-  }
+    this.navCtrl.push(CheckoutPage, {provider: this.name, total: this.total});  }
 }

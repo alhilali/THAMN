@@ -1,6 +1,6 @@
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { ProviderModel, BannerModel } from './database.models';
+import { ProviderModel, BannerModel,PaymentModel } from './database.models';
 import { User } from '../auth/auth.model';
 
 /*
@@ -57,7 +57,12 @@ export class DatabaseProvider {
      .then(response => response.json() as BannerModel[])
      .catch(this.handleError);
   }
-
+  getPayment(): Promise<PaymentModel[]> {
+    return this.http.get('./assets/example_data/payment.json')
+     .toPromise()
+     .then(response => response.json() as PaymentModel[])
+     .catch(this.handleError);
+  }
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);

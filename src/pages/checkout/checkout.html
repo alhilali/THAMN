@@ -9,7 +9,73 @@
   <ion-navbar>
     <ion-title>checkout</ion-title>
   </ion-navbar>
+       <ion-card class="card-theme">
+        <ion-card-title class="card-title">
+          Order Details
+        </ion-card-title>
+        <ion-card-content>
+          <ion-list >
+            <ion-item>
+           <ion-row no-padding class="content-row">
+                  <ion-col no-padding width-90 class="item-content">
+                    <h3 class="item-title">{{provider}}</h3>
+                  </ion-col>
+                  <ion-col class="item-end" no-padding width-10>
+                      <h4 class="value"><span class="bold">{{total}}</span></h4>
+                  </ion-col>
+                </ion-row>
+            </ion-item>
+          </ion-list>
 
+        </ion-card-content>
+      </ion-card>
+
+
+
+<ion-card class="card-theme">
+        <ion-card-title class="card-title">
+          Payment Details
+        </ion-card-title>
+        <ion-card-content>
+
+          <ion-list >
+            <ion-item>
+           <ion-row no-padding class="content-row">
+                  <ion-col no-padding width-90 class="item-content">
+                    <h3 class="item-title">We Accept</h3>
+                  </ion-col>
+                  
+           </ion-row>
+<ion-row no-padding class="content-row">
+         <ion-col ion-item class="provider-card" 
+         *ngFor="let p of payment; let i = index" >
+          <button id="close-image" ><img src="{{p.img}}"></button>
+        </ion-col>
+        </ion-row>
+        <ion-row> 
+      <ion-item>
+        <ion-input type="text" placeholder="Card Number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="date" placeholder="Expiration Date"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="CVV Code"></ion-input>
+      </ion-item>
+      <ion-item>
+      <button ion-button block class="pay-button" (click)="goToProfile()">
+        Pay Now</button>
+    </ion-item>
+        </ion-row>
+                
+            </ion-item>
+          </ion-list>
+
+        </ion-card-content>
+      </ion-card>
+      
 </ion-header>
 
 
