@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ViewController } from 'ionic-angular';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageProvider } from '../../providers/language/language.service';
@@ -20,6 +20,9 @@ export class ProfilePage {
   profile: User;
   languages: Array<LanguageModel>;
 
+  // Type personal: logged in user profile, company: a company is viwing profile
+  type: string = 'personal' 
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -27,6 +30,7 @@ export class ProfilePage {
     public translate: TranslateService,
     public languageService: LanguageProvider,
     public authService: AuthProvider,
+    public viewCtrl: ViewController,
     private camera: Camera
   ) 
     {
@@ -43,7 +47,20 @@ export class ProfilePage {
   }
 
   ionViewDidLoad() {
-    this.loadProfile();
+    let userInfo = this.navParams.get('userInfo');
+    if (userInfo) {
+      this.profile = userInfo;
+      console.log(this.profile);
+      
+      this.type = 'company';
+      this.profileForm.patchValue({
+        name: this.profile.name,
+        email: this.profile.email,
+        mobile: this.profile.mobile,
+      });
+    } else {
+      this.loadProfile();
+    }
   }
 
   loadProfile() {
@@ -106,6 +123,10 @@ export class ProfilePage {
     }, (err) => {
      // Handle error
     });
+  }
+
+  dismiss() {
+    this.viewCtrl.dismiss();
   }
 
 }

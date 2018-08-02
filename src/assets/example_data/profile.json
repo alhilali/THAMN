@@ -19,6 +19,12 @@
             "price": "450"
           }
     },
+    "files": [
+      {
+        "id": 0,
+        "filepath": "./assets/imgs/medical-records/img1.jpg"
+      }
+    ],
     "personalCode": "1Q2W3E"
   }
 }

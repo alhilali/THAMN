@@ -1,4 +1,4 @@
-import { ProviderModel } from "../database/database.models";
+import { ProviderModel, FileModel } from "../database/database.models";
 
 export class User {
   user_id: number;
@@ -10,6 +10,7 @@ export class User {
   dob: string;
   insuranceInfo?: ProviderModel;
   personalCode?: number;
+  files?: FileModel[];
 }
 
 export class Credentials {

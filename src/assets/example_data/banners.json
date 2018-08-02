@@ -20,9 +20,9 @@
 		"type": "request-access"
 	},
 	{
-		"name": "Profile",
-		"img": "./assets/imgs/banners/image3.jpg",
+		"name": "Language",
+		"img": "./assets/imgs/banners/image4.jpg",
 		"description": "",
-		"type": "profile"
+		"type": "language"
   }
 ]

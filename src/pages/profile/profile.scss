@@ -1,4 +1,11 @@
 page-profile {
+
+  ion-navbar {
+    ion-icon {
+      color: white;
+      font-size: 3rem;
+    }
+  }
   
   .content {
     background-color: $white-a;
@@ -54,68 +61,6 @@ page-profile {
     }
   }
 
-  .insurance-info {
-    .content-row
-    {
-      border: 0px !important;
-      .item-title{
-        // overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: normal;
-        text-align: center;
-      }
-
-      .avatar-image {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 35%;
-        margin-bottom: 17px;
-        border-radius: 15px;
-      }
-
-      &.one-line
-      {
-        align-items: center;
-
-        .item-description
-        {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
-      }
-
-      .item-icons {
-        letter-spacing: 5px;
-        padding-top: 11px;
-
-        ion-icon {
-          font-size: 20px;
-        }
-
-        .item-icon {
-          color: lightslategrey;
-        }
-      }
-
-      .item-end {
-        color: $white-d;
-        text-align: center;
-        align-self: center;
-
-        .label {
-          font-size: 1.0rem;
-          font-weight: 500;
-        }
-        .value {
-          font-size: 1.5rem;
-          font-weight: 400;
-        }
-      }
-    }
-  }
-
   .documents-info {
     .button {
       background-color: $theme-color-2;
@@ -133,6 +78,66 @@ page-profile {
     padding-right: 23px !important;
     color: white;
     background-color: $theme-color-2;
+  }
+
+  .content-row
+  {
+    border: 0px !important;
+    .item-title{
+      // overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+      text-align: center;
+    }
+
+    .avatar-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 35%;
+      margin-bottom: 17px;
+      border-radius: 15px;
+    }
+
+    &.one-line
+    {
+      align-items: center;
+
+      .item-description
+      {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    .item-icons {
+      letter-spacing: 5px;
+      padding-top: 11px;
+
+      ion-icon {
+        font-size: 20px;
+      }
+
+      .item-icon {
+        color: lightslategrey;
+      }
+    }
+
+    .item-end {
+      color: $white-d;
+      text-align: center;
+      align-self: center;
+
+      .label {
+        font-size: 1.0rem;
+        font-weight: 500;
+      }
+      .value {
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+    }
   }
 
 }

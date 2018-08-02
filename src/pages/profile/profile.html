@@ -7,16 +7,19 @@
 <ion-header>
 
   <ion-navbar>
-    <button ion-button menuToggle>
+    <button *ngIf="type !== 'company'" ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>{{'PROFILE' | translate}}</ion-title>
+    <button *ngIf="type === 'company'" (click)="dismiss()" ion-button clear>
+      <ion-icon color="white" name="close"></ion-icon>
+    </button>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <ion-card class="card-theme">
     <ion-card-title>Personal Information</ion-card-title>
     <ion-card-content>
@@ -34,14 +37,6 @@
               <ion-label stacked>{{ 'PHONE' | translate }}</ion-label>
               <ion-input type="text" formControlName="mobile"></ion-input>
             </ion-item>
-          </ion-list>
-          <ion-list class="user-data-content"t>
-              <ion-item>
-                <ion-label>{{ 'SELECT_LANGUAGE' | translate }}</ion-label>
-                <ion-select formControlName="language" cancelText="{{ 'CANCEL' | translate }}" okText="{{ 'OK' | translate }}">
-                  <ion-option *ngFor="let language of languages" [value]="language">{{ language.name }}</ion-option>
-                </ion-select>
-              </ion-item>
           </ion-list>
       </form>
     </ion-card-content>
@@ -79,28 +74,37 @@
   <ion-card class="card-theme documents-info">
     <ion-card-title>Documents</ion-card-title>
     <ion-card-content>
-    <div *ngIf="profile && profile.personalCode" class="profile-form">
-        <p text-center>Here you can attach your medical records.</p>
-        <p text-center>Use this code to share your documents with medical providers: <span class="bold" bold>{{profile.personalCode}}</span></p>
-        <ion-list *ngIf="profile.docs" class="user-data-content">
-          <ion-item>
-            <ion-label stacked>{{ 'NAME' | translate }}</ion-label>
-            <ion-input type="text">{{profile.docs.name}}</ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label stacked>{{ 'DESCRIPTION' | translate }}</ion-label>
-            <ion-input type="text">{{profile.docs.description}}</ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label stacked>{{ 'DATE' | translate }}</ion-label>
-            <ion-input type="text">{{profile.docs.description}}</ion-input>
-          </ion-item>
+    <div *ngIf="profile" class="profile-form">
+        <!-- <p text-center>Here you can attach your medical records.</p> -->
+        <p *ngIf="type !== 'company' && profile.personalCode" text-center>Use this code to share your documents with medical providers: <span class="bold" bold>{{profile.personalCode}}</span></p>
+        <ion-list *ngIf="profile.files" class="user-data-content">
+        <ion-row *ngFor="let file of profile.files" ion-item no-padding class="content-row">
+            <ion-col no-padding width-70 class="item-content">
+              <h3 class="item-title">{{file.name}}</h3>
+              <p class="item-description"></p>
+            </ion-col>
+            <ion-col class="item-end" no-padding width-20>
+                <h6 class="label">ID: <span class="bold">{{file.id}}</span></h6>
+            </ion-col>
+          </ion-row>
         </ion-list>
       </div>
-      <div class="profile-form">
+      <div *ngIf="type !== 'company'" class="profile-form">
         <button ion-button block class="button" (click)="uploadNewDocument()">{{'UPLOAD' | translate}}</button>
       </div>
     </ion-card-content>
   </ion-card>
+
+
+  <form *ngIf="profile && type !== 'company'" [formGroup]="profileForm" class="profile-form">
+    <ion-list class="user-data-content"t>
+        <ion-item>
+          <ion-label>{{ 'SELECT_LANGUAGE' | translate }}</ion-label>
+          <ion-select formControlName="language" cancelText="{{ 'CANCEL' | translate }}" okText="{{ 'OK' | translate }}">
+            <ion-option *ngFor="let language of languages" [value]="language">{{ language.name }}</ion-option>
+          </ion-select>
+        </ion-item>
+    </ion-list>
+  </form>
 
 </ion-content>

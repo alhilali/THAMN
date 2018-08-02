@@ -1,3 +1,18 @@
 page-request-access {
 
+  .content {
+    background-color: $white-a;
+  }
+  
+  .error-message
+  {
+    padding: 0px 16px;
+    color: red;
+  }
+
+  .button {
+    background-color: $theme-color-2;
+  }
+
+
 }

@@ -1,6 +1,7 @@
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { ProviderModel, BannerModel } from './database.models';
+import { User } from '../auth/auth.model';
 
 /*
   Generated class for the DatabaseProvider provider.
@@ -30,6 +31,24 @@ export class DatabaseProvider {
       return provider;
      })
      .catch(this.handleError);
+  }
+
+  requestProfile(id: string, code: number): Promise<User>{
+    return this.http.get('./assets/example_data/users.json')
+    .toPromise()
+    .then(response => {
+      let users: User[] = response.json().response['users'] as User[];
+
+      for (let index = 0; index < users.length; index++) {
+        const user = users[index];
+        // console.log(user);
+        
+        if (user.id === id && user.personalCode == code) return user;
+
+        if (index == users.length - 1) return null;
+      }
+    })
+    .catch(this.handleError);
   }
 
   getBanners(): Promise<BannerModel[]> {

@@ -15,6 +15,8 @@ import { SignUpPage } from '../pages/sign-up/sign-up';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { ListPage } from '../pages/list/list';
 import { FaqPage } from "../pages/faq/faq";
+import { RequestAccessPage } from '../pages/request-access/request-access';
+import { ViewDocumentPage } from '../pages/view-document/view-document';
 
 
 // Providers
@@ -49,7 +51,9 @@ export function createTranslateLoader(http: HttpClient) {
     SignUpPage,
     WelcomePage,
     ListPage,
-    FaqPage
+    FaqPage,
+    RequestAccessPage,
+    ViewDocumentPage
   ],
   imports: [
     BrowserModule,
@@ -79,7 +83,9 @@ export function createTranslateLoader(http: HttpClient) {
     SignUpPage,
     WelcomePage,
     ListPage,
-    FaqPage
+    FaqPage,
+    RequestAccessPage,
+    ViewDocumentPage
   ],
   providers: [
     StatusBar,

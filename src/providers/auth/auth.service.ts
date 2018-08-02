@@ -47,11 +47,12 @@ export class AuthProvider {
   }
 
   getProfile(): Promise<User>{
-    return this.http.get('./assets/example_data/profile.json')
+    return this.http.get('./assets/example_data/users.json')
     .toPromise()
     .then(response => {
-      this.currentUser = response.json().response as User;
-      return this.currentUser;
+      let users: User[] = response.json().response['users'] as User[];
+      const user = users[0];
+      return user;
     })
     .catch(this.handleError);
   }

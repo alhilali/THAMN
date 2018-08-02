@@ -1,0 +1,39 @@
+{
+  "response": {
+    "users": [
+      {
+        "id": 1,
+        "files": [
+          {
+            "id": 0,
+            "filepath": "./assets/imgs/medical-records/img1.jpg"
+          }
+        ],
+        "insuranceInfo": {
+          "id": 1,
+          "name": "Buba Arabia",
+          "img": "./assets/imgs/providers/img1.jpg",
+          "description": "Bupa is an international healthcare group, with its origins and headquarters in the United Kingdom but now serving 32 million customers in 190 countries. It is a private healthcare not for-profit company limited by guarantee,[1] as opposed to the UK's National Health Service (NHS), which is a tax-funded healthcare system.",
+          "price": "150",
+          "packages": [
+            {
+              "name": "Family Package",
+              "description": "This package covers all of your family members.",
+              "price": "450"
+            },
+            {
+              "name": "Hajj Package",
+              "description": "This package only covers hajj period.",
+              "price": "150"
+            },
+            {
+              "name": "Hajj Extended Package",
+              "description": "This package will also cover Umrah period and your tourism stay for two weeks after.",
+              "price": "250"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

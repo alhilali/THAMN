@@ -21,3 +21,9 @@ export class PackageModel {
   description: string;
   price: string;
 }
+
+export class FileModel {
+  id: number;
+  filepath: string;
+  name: string;
+}
