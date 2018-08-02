@@ -1,13 +1,12 @@
-<!--
-  Generated template for the ContactUsPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+
 <ion-header>
 
   <ion-navbar>
-    <ion-title>contact-us</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'CONTACT_US' | translate}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +14,52 @@
 
 <ion-content padding>
 
+<ion-card>
+  <ion-card-header>
+    {{'ABOUT_US' | translate}}
+  </ion-card-header>
+  <ion-card-content>
+    With vision 2030, the Kingdom aims to facilitate the user's experience and provide effective health services. Our vision is to have international platform that enable the pilgrims to reach all the insurance companies.
+  </ion-card-content>
+</ion-card>
+
+   <ion-list >
+
+       
+
+  <ion-item text-wrap (click)="showHideButtons()">
+    <h3>
+        {{'CONTACT US' | translate}}?
+      <ion-icon color="success" item-right [name]="chooseTypeClicked ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+    </h3>
+     </ion-item>
+    <div *ngIf="chooseTypeClicked">
+      <ion-item>
+      <ion-input type="text" placeholder="Name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Email"></ion-input>
+    </ion-item>
+
+ <ion-item>
+      <ion-textarea type="text" placeholder="Message"></ion-textarea>
+    </ion-item>
+     <div padding>
+    <button ion-button color="primary" block >Send Message</button>
+  </div>
+      </div>
+ 
+  </ion-list>
+
+ 
+
 </ion-content>
+
+
+
+
+
+
+
+ 

@@ -14,6 +14,9 @@ import { HomePage } from '../pages/home/home';
 import { AuthProvider } from '../providers/auth/auth.service';
 import { SignUpPage } from '../pages/sign-up/sign-up';
 import { ListPage } from '../pages/list/list';
+import { ContactUsPage } from "../pages/contact-us/contact-us";
+import { FaqPage } from "../pages/faq/faq";
+
 
 @Component({
   templateUrl: 'app.html'
@@ -67,13 +70,18 @@ export class MyApp {
         this.translate.get('PROFILE'),
         this.translate.get('SIGN_IN'),
         this.translate.get('SIGN_UP'),
-        this.translate.get('INSURANCE_COS')
+        this.translate.get('INSURANCE_COS'),
+        this.translate.get('ABOUT_US'),
+        this.translate.get('FAQ'),
+
 
       ).subscribe(data => {
         this.pages = [
           { title: data[0], icon: 'home', component: HomePage },
           { title: data[1], icon: 'contacts', component: ProfilePage },
           { title: data[4], icon: 'list', component: ListPage },
+          { title: data[5], icon: 'information-circle', component: ContactUsPage },
+          { title: data[6], icon: 'md-help', component: FaqPage }
         ];
 
         if (!this.auth.isAuthorized) {
