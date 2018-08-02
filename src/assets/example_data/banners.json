@@ -18,5 +18,23 @@
 		"img": "./assets/imgs/banners/image2.jpg",
 		"description": "",
 		"type": ""
+	},
+	{
+		"name": "",
+		"img": "./assets/imgs/banners/image1.jpg",
+		"description": "",
+		"type": ""
+  },
+  {
+		"name": "Insurance Companies",
+		"img": "./assets/imgs/banners/image2.jpg",
+		"description": "",
+		"type": "providers"
+  },
+  {
+		"name": "Insurance Companies",
+		"img": "./assets/imgs/banners/image1.jpg",
+		"description": "",
+		"type": "providers"
   }
 ]

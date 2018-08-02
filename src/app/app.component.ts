@@ -72,25 +72,25 @@ export class MyApp {
       Observable.forkJoin(
         this.translate.get('HOME'),
         this.translate.get('PROFILE'),
-        this.translate.get('SIGN_IN'),
-        this.translate.get('SIGN_UP'),
         this.translate.get('INSURANCE_COS'),
         this.translate.get('ABOUT_US'),
         this.translate.get('FAQ'),
+        this.translate.get('SIGN_IN'),
+        this.translate.get('SIGN_UP'),
 
 
       ).subscribe(data => {
         this.pages = [
           { title: data[0], icon: 'home', component: HomePage },
           { title: data[1], icon: 'contacts', component: ProfilePage },
-          { title: data[4], icon: 'list', component: ListPage },
-          { title: data[5], icon: 'information-circle', component: ContactUsPage },
-          { title: data[6], icon: 'md-help', component: FaqPage }
+          { title: data[2], icon: 'list', component: ListPage },
+          { title: data[3], icon: 'information-circle', component: ContactUsPage },
+          { title: data[4], icon: 'md-help', component: FaqPage }
         ];
 
         if (!this.auth.isAuthorized) {
-          this.pages.push({ title: data[2], icon: 'log-in', component: LoginPage });
-          this.pages.push({ title: data[3], icon: 'person-add', component: SignUpPage });
+          this.pages.push({ title: data[5], icon: 'log-in', component: LoginPage });
+          this.pages.push({ title: data[6], icon: 'person-add', component: SignUpPage });
         }
 
         this.pushPages = [
@@ -101,11 +101,11 @@ export class MyApp {
         this.events.subscribe('user:activity', (type) => {
 
           if (type === 'login') {
-            this.pages.splice(2);
-            this.pages.splice(3);
+            // this.pages.splice(4, 5);
+            this.pages.splice(5, 6);
           } else if (type == 'logout') {
-            this.pages.push({ title: data[2], icon: 'log-in', component: LoginPage });
-            this.pages.push({ title: data[3], icon: 'person-add', component: SignUpPage });
+            this.pages.push({ title: data[5], icon: 'log-in', component: LoginPage });
+            this.pages.push({ title: data[6], icon: 'person-add', component: SignUpPage });
           }
 
         });

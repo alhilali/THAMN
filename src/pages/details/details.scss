@@ -2,7 +2,7 @@ page-details {
   .top-bar {
     padding-left: 0 !important;
     background-color: $white-a;
-    
+
     .avatar {
       img {
         width: 100px;
@@ -20,6 +20,7 @@ page-details {
     .card-title {
       padding-top: 16px !important;
       padding-left: 23px !important;
+      padding-right: 23px !important;
       color: white;
       background-color: $theme-color-2;
     }

@@ -19,7 +19,7 @@
 
 .top-menu {
   padding-top: 20px;
-  background-color: $theme-color-2;
+  background-color: $theme-color-1;
   padding-bottom: 80px;
   .logo {
     display: block;
@@ -30,4 +30,8 @@
   .app-title {
     color: white;
   }
+}
+
+.menu-content {
+  background-color: $white-a;
 }

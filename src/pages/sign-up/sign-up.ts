@@ -2,9 +2,9 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, LoadingController, Slides } from 'ionic-angular';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth.service';
-import { TabsPage } from '../tabs/tabs';
 import { LoginPage } from '../login/login';
 import { User } from '../../providers/auth/auth.model';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the SignUpPage page.
@@ -82,7 +82,7 @@ export class SignUpPage {
     setTimeout(() => { // For demo purposes
       loadingSpinner.dismiss();
       if (loginInfo.token) {
-        this.navCtrl.setRoot(TabsPage);
+        this.navCtrl.setRoot(HomePage);
       } else {
         this.errorMessage = "Something was wrong!"
       }
