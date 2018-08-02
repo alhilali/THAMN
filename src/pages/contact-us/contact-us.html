@@ -1,5 +1,3 @@
-
-
 <ion-header>
 
   <ion-navbar>
@@ -8,58 +6,50 @@
     </button>
     <ion-title>{{'CONTACT_US' | translate}}</ion-title>
   </ion-navbar>
+  <ion-card class="card-theme">
+    <ion-card-title class="card-title">
+      {{'ABOUT_US' | translate}}
+    </ion-card-title>
+    <ion-card-content>
+      With vision 2030, the Kingdom aims to facilitate the user's experience and provide effective health services. Our vision
+      is to have international platform that enable the pilgrims to reach all the insurance companies.
+    </ion-card-content>
+  </ion-card>
 
 </ion-header>
 
 
 <ion-content padding>
 
-<ion-card>
-  <ion-card-header>
-    {{'ABOUT_US' | translate}}
-  </ion-card-header>
-  <ion-card-content>
-    With vision 2030, the Kingdom aims to facilitate the user's experience and provide effective health services. Our vision is to have international platform that enable the pilgrims to reach all the insurance companies.
-  </ion-card-content>
-</ion-card>
+  <ion-list>
 
-   <ion-list >
 
-       
 
-  <ion-item text-wrap (click)="showHideButtons()">
-    <h3>
+    <ion-item text-wrap (click)="showHideButtons()">
+      <h3>
         {{'CONTACT US' | translate}}?
-      <ion-icon color="success" item-right [name]="chooseTypeClicked ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
-    </h3>
-     </ion-item>
+        <ion-icon color="success" item-right [name]="chooseTypeClicked ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+      </h3>
+    </ion-item>
     <div *ngIf="chooseTypeClicked">
       <ion-item>
-      <ion-input type="text" placeholder="Name"></ion-input>
-    </ion-item>
+        <ion-input type="text" placeholder="Name"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-input type="text" placeholder="Email"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Email"></ion-input>
+      </ion-item>
 
- <ion-item>
-      <ion-textarea type="text" placeholder="Message"></ion-textarea>
-    </ion-item>
-     <div padding>
-    <button ion-button color="theme-color-2" block >Send Message</button>
-  </div>
+      <ion-item>
+        <ion-textarea type="text" placeholder="Message"></ion-textarea>
+      </ion-item>
+      <div padding>
+        <button ion-button color="theme-color-2" block>Send Message</button>
       </div>
- 
+    </div>
+
   </ion-list>
 
- 
+
 
 </ion-content>
-
-
-
-
-
-
-
- 

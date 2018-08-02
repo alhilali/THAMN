@@ -1,0 +1,18 @@
+[
+	{
+		"id": 1,
+		"name": "Visa",
+		"img": "./assets/imgs/payment/image1.png"
+  },
+	{
+		"id": 2,
+		"name": "Visa",
+		"img": "./assets/imgs/payment/image2.png"
+  }
+	,
+	{
+		"id": 3,
+		"name": "Visa",
+		"img": "./assets/imgs/payment/image3.png"
+  }
+]

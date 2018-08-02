@@ -27,3 +27,9 @@ export class FileModel {
   filepath: string;
   name: string;
 }
+
+export class PaymentModel {
+  name: string;
+  img: string;
+  id?: number;
+}
