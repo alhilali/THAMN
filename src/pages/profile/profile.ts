@@ -42,6 +42,7 @@ export class ProfilePage {
         name: new FormControl('', Validators.required),
         email: new FormControl('', Validators.required),
         mobile: new FormControl('', Validators.required),
+        dob: new FormControl('', Validators.required),
         language: new FormControl('', Validators.required)
       });
 
@@ -58,6 +59,7 @@ export class ProfilePage {
         name: this.profile.name,
         email: this.profile.email,
         mobile: this.profile.mobile,
+        dob: this.profile.dob
       });
     } else {
       this.loadProfile();
@@ -80,6 +82,7 @@ export class ProfilePage {
         name: data.name,
         email: data.email,
         mobile: data.mobile,
+        dob: data.dob,
         language: this.languages.filter(x => x.code == currentLang)
       });
 
@@ -126,8 +129,8 @@ export class ProfilePage {
     });
   }
 
-  goToDocument() {
-    this.navCtrl.push(ViewDocumentPage);
+  goToDocument(file) {
+    this.navCtrl.push(ViewDocumentPage, { file: file });
   }
 
   dismiss() {

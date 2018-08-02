@@ -24,59 +24,195 @@
 		]
 	},
 	{
+		"id": 9,
+		"name": "Aetna International",
+		"img": "/assets/imgs/providers/img12.jpg",
+		"description": "",
+		"price": "670",
+		"packages": [
+			{
+				"name": "Family Package",
+				"description": "This package covers all of your family members.",
+				"price": "450"
+			},
+			{
+				"name": "Hajj Package",
+				"description": "This package only covers hajj period.",
+				"price": "150"
+			},
+			{
+				"name": "Hajj Extended Package",
+				"description": "This package will also cover Umrah period and your tourism stay for two weeks after.",
+				"price": "250"
+			}
+		]
+	},
+	{
 		"id": 2,
 		"name": "Allied Cooperative Insurance Group",
 		"img": "/assets/imgs/providers/img2.jpg",
 		"description": "",
-		"price": "350"
-	},
-	{
-		"id": 3,
-		"name": "Walaa Cooperative Insurance Co.",
-		"img": "/assets/imgs/providers/img3.jpg",
-		"description": "",
-		"price": "450"
-	},
-	{
-		"id": 4,
-		"name": "Al-Ahlia for Cooperative Insurence",
-		"img": "/assets/imgs/providers/img4.jpg",
-		"description": "",
-		"price": "890"
-	},
-	{
-		"id": 5,
-		"name": "Tawuniya Cooperative Insurance Co.",
-		"img": "/assets/imgs/providers/img5.jpg",
-		"description": "",
-		"price": "350"
-	},
-	{
-		"id": 6,
-		"name": "Gulf General Cooperative Insurance Co.",
-		"img": "/assets/imgs/providers/img6.jpg",
-		"description": "",
-		"price": "250"
-	},
-	{
-		"id": 7,
-		"name": "Saudi Indian Company for Coopertive Insurance (Wafa)",
-		"img": "/assets/imgs/providers/img7.jpg",
-		"description": "",
-		"price": "180"
+		"price": "350",
+		"packages": [
+			{
+				"name": "Family Package",
+				"description": "This package covers all of your family members.",
+				"price": "450"
+			},
+			{
+				"name": "Hajj Package",
+				"description": "This package only covers hajj period.",
+				"price": "150"
+			},
+			{
+				"name": "Hajj Extended Package",
+				"description": "This package will also cover Umrah period and your tourism stay for two weeks after.",
+				"price": "250"
+			}
+		]
 	},
 	{
 		"id": 8,
 		"name": "UnitedHealthcare Inc",
 		"img": "/assets/imgs/providers/img11.jpg",
 		"description": "",
-		"price": "890"
+		"price": "890",
+		"packages": [
+			{
+				"name": "Family Package",
+				"description": "This package covers all of your family members.",
+				"price": "450"
+			},
+			{
+				"name": "Hajj Package",
+				"description": "This package only covers hajj period.",
+				"price": "150"
+			},
+			{
+				"name": "Hajj Extended Package",
+				"description": "This package will also cover Umrah period and your tourism stay for two weeks after.",
+				"price": "250"
+			}
+		]
 	},
 	{
-		"id": 9,
-		"name": "Aetna International",
-		"img": "/assets/imgs/providers/img12.jpg",
+		"id": 3,
+		"name": "Walaa Cooperative Insurance Co.",
+		"img": "/assets/imgs/providers/img3.jpg",
 		"description": "",
-		"price": "670"
+		"price": "450",
+		"packages": [
+			{
+				"name": "Family Package",
+				"description": "This package covers all of your family members.",
+				"price": "450"
+			},
+			{
+				"name": "Hajj Package",
+				"description": "This package only covers hajj period.",
+				"price": "150"
+			},
+			{
+				"name": "Hajj Extended Package",
+				"description": "This package will also cover Umrah period and your tourism stay for two weeks after.",
+				"price": "250"
+			}
+		]
+	},
+	{
+		"id": 4,
+		"name": "Al-Ahlia for Cooperative Insurence",
+		"img": "/assets/imgs/providers/img4.jpg",
+		"description": "",
+		"price": "890",
+		"packages": [
+			{
+				"name": "Family Package",
+				"description": "This package covers all of your family members.",
+				"price": "450"
+			},
+			{
+				"name": "Hajj Package",
+				"description": "This package only covers hajj period.",
+				"price": "150"
+			},
+			{
+				"name": "Hajj Extended Package",
+				"description": "This package will also cover Umrah period and your tourism stay for two weeks after.",
+				"price": "250"
+			}
+		]
+	},
+	{
+		"id": 5,
+		"name": "Tawuniya Cooperative Insurance Co.",
+		"img": "/assets/imgs/providers/img5.jpg",
+		"description": "",
+		"price": "350",
+		"packages": [
+			{
+				"name": "Family Package",
+				"description": "This package covers all of your family members.",
+				"price": "450"
+			},
+			{
+				"name": "Hajj Package",
+				"description": "This package only covers hajj period.",
+				"price": "150"
+			},
+			{
+				"name": "Hajj Extended Package",
+				"description": "This package will also cover Umrah period and your tourism stay for two weeks after.",
+				"price": "250"
+			}
+		]
+	},
+	{
+		"id": 6,
+		"name": "Gulf General Cooperative Insurance Co.",
+		"img": "/assets/imgs/providers/img6.jpg",
+		"description": "",
+		"price": "250",
+		"packages": [
+			{
+				"name": "Family Package",
+				"description": "This package covers all of your family members.",
+				"price": "450"
+			},
+			{
+				"name": "Hajj Package",
+				"description": "This package only covers hajj period.",
+				"price": "150"
+			},
+			{
+				"name": "Hajj Extended Package",
+				"description": "This package will also cover Umrah period and your tourism stay for two weeks after.",
+				"price": "250"
+			}
+		]
+	},
+	{
+		"id": 7,
+		"name": "Saudi Indian Company for Coopertive Insurance (Wafa)",
+		"img": "/assets/imgs/providers/img7.jpg",
+		"description": "",
+		"price": "180",
+		"packages": [
+			{
+				"name": "Family Package",
+				"description": "This package covers all of your family members.",
+				"price": "450"
+			},
+			{
+				"name": "Hajj Package",
+				"description": "This package only covers hajj period.",
+				"price": "150"
+			},
+			{
+				"name": "Hajj Extended Package",
+				"description": "This package will also cover Umrah period and your tourism stay for two weeks after.",
+				"price": "250"
+			}
+		]
 	}
 ]

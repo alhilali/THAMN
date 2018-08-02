@@ -27,25 +27,32 @@ page-home {
 	}
 
 	.top-content {
-		padding-bottom: 40px;
+		padding-bottom: 35px;
 		.logo {
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
-			width: 20%;
+			width: 25%;
+			padding-top: 40px;
 		}
 		.app-title {
 			color: white;
+			font-size: 3.2rem;
 		}
 	}
 
 	.listing-content
 	{
+		box-shadow: -3px -5px 13px #043e5463;
 
 		.provider-card {
 
+			&.ad {
+				background-image: url('https://preview.ibb.co/erQJWK/img1.jpg');
+			}
+
 			background-size: cover;
-			height: 200px;
+			height: 178px;
 			// min-height: 100px;
 			// max-height: 200px;
 			padding: 0px;
@@ -62,7 +69,7 @@ page-home {
 				bottom: 0;
 				left: 0;
 				width: 100%;
-				height: 45px;
+				// height: 45px;
 				padding-bottom: 3px;
 				padding-left: 10px;
 				background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(12, 12, 12, 0.597) 100%);

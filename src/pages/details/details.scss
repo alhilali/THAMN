@@ -3,6 +3,10 @@ page-details {
     padding-left: 0 !important;
     background-color: $white-a;
 
+    .item-inner {
+      padding-right: 0px !important;
+    }
+
     .avatar {
       img {
         width: 100px;

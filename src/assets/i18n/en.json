@@ -9,11 +9,16 @@
   "NEXT": "Next",
   "CHECK": "Check Records",
   "SIGN_OUT": "Logout",
-  "INSURANCE_COS": "Insuracne Companies",
+  "INSURANCE_COS": "Insurance Companies",
   "CONTACT_US":"Contact Us",
   "ABOUT_US": "About Us",
   "FAQ":"FAQs",
   "NAME": "Name",
   "EMAIL": "Email",
-  "PHONE": "Mobile Phone"
+  "PHONE": "Mobile Phone",
+  "REQUEST_ACCESS": "Medical Records",
+  "VIEW_DOCUMENT": "View Document",
+  "REQUEST_INFO": "In order to have access to medical records for patient, please enter secret code.",
+  "ID_NOTE": "ID can be a national ID/Passport/Iqama number.",
+  "ID_DETECT_INFO": "Our system will try to fetch your information using your ID."
 }

@@ -7,12 +7,21 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>viewDocument</ion-title>
+    <ion-title>{{'VIEW_DOCUMENT' | translate}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <ion-card *ngIf="file" class="card-theme">
+    <ion-card-title class="card-title">
+      {{file.name}}
+    </ion-card-title>
+    <ion-card-content>
+      <img [src]="file.filepath" alt="">
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

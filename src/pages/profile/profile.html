@@ -34,6 +34,10 @@
               <ion-input type="text" formControlName="email"></ion-input>
             </ion-item>
             <ion-item>
+                <ion-label stacked>{{ 'DOB' | translate }}</ion-label>
+                <ion-input type="text" formControlName="dob"></ion-input>
+              </ion-item>
+            <ion-item>
               <ion-label stacked>{{ 'PHONE' | translate }}</ion-label>
               <ion-input type="text" formControlName="mobile"></ion-input>
             </ion-item>
@@ -78,12 +82,12 @@
         <!-- <p text-center>Here you can attach your medical records.</p> -->
         <p *ngIf="type !== 'company' && profile.personalCode" text-center>Use this code to share your documents with medical providers: <span class="bold" bold>{{profile.personalCode}}</span></p>
         <ion-list *ngIf="profile.files" class="user-data-content" padding-vertical>
-        <ion-row *ngFor="let file of profile.files" ion-item no-padding class="content-row">
-            <ion-col no-padding width-70 class="item-content" (click)="goToDocument()">
-              <h3 class="item-title">{{file.name}}</h3>
+        <ion-row *ngFor="let file of profile.files" no-padding class="content-row">
+            <ion-col no-padding width-80 class="item-content" (click)="goToDocument(file)">
+              <h3 text-left class="item-title">{{file.name}}</h3>
               <p class="item-description"></p>
             </ion-col>
-            <ion-col class="item-end" no-padding width-20>
+            <ion-col text-right class="item-end" no-padding width-20>
                 <h6 class="label">ID: <span class="bold">{{file.id}}</span></h6>
             </ion-col>
           </ion-row>

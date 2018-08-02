@@ -22,13 +22,19 @@
       <ion-slide>
       <ion-card class="card-theme">
           <ion-card-content>
-            <p text-center>
-              سيحاول النظام جلب معلوماتك عن طريق الرقم المدخل.
-              ملاحظة: من الممكن إدخال رقم الجواز، أو رقم الآحوال أو رقم الإقامة.
-            </p>
+            <div class="alert alert-warning">
+              <p text-left>
+                {{'ID_DETECT_INFO' | translate}}
+              </p>
+            </div>
+            <div class="alert alert-warning">
+              <p text-left>
+                  {{'ID_NOTE' | translate}}
+                </p>
+            </div>
             <form class="signup-form auth-form" [formGroup]="signupFormStep1">
               <ion-item>
-                <ion-input placeholder="ID" formControlName="id"></ion-input>
+                <ion-input placeholder="ID/National ID/Iqama..." formControlName="id"></ion-input>
               </ion-item>
               <ion-item>
                 <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>

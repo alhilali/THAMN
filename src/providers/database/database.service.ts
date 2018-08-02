@@ -1,6 +1,6 @@
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { ProviderModel, BannerModel,PaymentModel } from './database.models';
+import { ProviderModel, BannerModel, PaymentModel } from './database.models';
 import { User } from '../auth/auth.model';
 
 /*

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { FileModel } from '../../providers/database/database.models';
 
 /**
  * Generated class for the ViewDocumentPage page.
@@ -13,12 +14,18 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'view-document.html',
 })
 export class ViewDocumentPage {
+  file: FileModel;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams
+  ) {
+    this.file = this.navParams.get('file');
+    console.log(this.file);
+    
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ViewDocumentPage');
   }
 
 }

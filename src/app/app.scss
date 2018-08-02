@@ -18,14 +18,14 @@
 
 
 .top-menu {
-  padding-top: 20px;
+  padding-top: 55px;
   background-color: $theme-color-1;
-  padding-bottom: 80px;
+  padding-bottom: 52px;
   .logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 25%;
   }
   .app-title {
     color: white;
@@ -34,4 +34,14 @@
 
 .menu-content {
   background-color: $white-a;
+
+  .toolbar {
+    justify-content: center;
+    height: 44px;
+    background-color: $theme-color-1;
+    box-shadow: -1px 2px 4px #03374a;
+    padding-left: 10px;
+    color: white;
+    text-align: center;
+  }
 }

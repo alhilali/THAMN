@@ -8,26 +8,28 @@
 </ion-header>
 
 <ion-content>
-    <div class="top-content">
-      <img class="logo" src="assets/imgs/logo.png" width="110" alt="">
-      <h3 class="app-title" text-center>
-        THAMEN
-      </h3>
-    </div>
-    <div class="listing-content">
-      <ion-row no-padding class="content-row">
-        <ion-col ion-item class="provider-card" col-6 [ngClass]="{'col-6': i != 0}" *ngFor="let banner of banners; let i = index" (click)="goToPage(banner)" [ngStyle]="{'background-image': 'url('+banner.img+')'}">
-          <!-- <ion-row class="top-bar">            
-            <ion-avatar no-padding item-start>
-              <img [src]="provider.img">
-            </ion-avatar>
-          </ion-row> -->
-          <div class="top-bar">
-            <ion-row>
-              <h3 class="item-title">{{banner.name}}</h3>
-            </ion-row>
-          </div>
-        </ion-col>
-      </ion-row>
-    </div>
-  </ion-content>
+  <div class="top-content">
+    <img class="logo" src="assets/imgs/logo.png" width="110" alt="">
+    <h3 class="app-title" text-center>
+      ضامن
+    </h3>
+  </div>
+  <div class="listing-content">
+    <ion-row no-padding class="content-row">
+      <ion-col ion-item class="provider-card" col-6 [ngClass]="{'col-6': i != 0}" *ngFor="let banner of banners; let i = index" (click)="goToPage(banner)" [ngStyle]="{'background-image': 'url('+banner.img+')'}">
+        <div class="top-bar">
+          <ion-row>
+            <h3 class="item-title">{{banner.name}}</h3>
+          </ion-row>
+        </div>
+      </ion-col>
+      <ion-col class="provider-card ad" col-12>
+        <div class="top-bar">
+          <ion-row>
+            <h3 class="item-title">Advertisement</h3>
+          </ion-row>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

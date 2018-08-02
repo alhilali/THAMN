@@ -7,7 +7,8 @@
         "email": "mohammed@ali.com",
         "name": "Mohammed Ali",
         "id": "1084258647",
-        "mobile": "0500898033",
+        "mobile": "+966500898033",
+        "dob": "1/10/1980",
         "insuranceInfo": {
             "id": 1,
             "name": "Buba Arabia",
@@ -29,7 +30,7 @@
             "filepath": "./assets/imgs/medical-records/img1.jpg"
           }
         ],
-        "personalCode": "1Q2W3E"
+        "personalCode": "1234"
       },
       {
         "user_id": 2,
@@ -37,7 +38,30 @@
         "email": "Ahmad@thamn.com",
         "name": "Ahmad Yousef",
         "id": "P12345",
-        "dob": "1/10/1980"
+        "mobile": "+13525146963",
+        "dob": "1/10/1980",
+        "insuranceInfo": {
+          "id": 1,
+          "name": "Buba Arabia",
+          "img": "./assets/imgs/providers/img1.jpg",
+          "price": "150",
+          "valid": true,
+          "date": "2018/08/15 - 2018/09/15",
+          "package":
+            {
+              "name": "Family Package",
+              "description": "This package covers all of your family members.",
+              "price": "450"
+            }
+      },
+      "files": [
+        {
+          "id": 0,
+          "name": "Medial Record",
+          "filepath": "./assets/imgs/medical-records/img1.jpg"
+        }
+      ],
+      "personalCode": "4321"
       }
     ]
   }

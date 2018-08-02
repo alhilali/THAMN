@@ -10,7 +10,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>requestAccess</ion-title>
+    <ion-title>{{'REQUEST_ACCESS' | translate}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,15 +19,19 @@
 <ion-content>
   <ion-card class="card-theme">
     <ion-card-content>
-      <p text-center>
-        للحصول على الملفات الطبية للمريض الرجاء إدخال رقم التعريفي والرقم السري الخاص المعطى من المريض.
-      </p>
-      <p text-center>
-          ملاحظة: الرقم التعريفي من الممكن أن يكون رقم الجواز، رقم الآحوال أو رقم الإقامة.
+    <div class="alert alert-warning">
+        <p text-left>
+          {{'REQUEST_INFO' | translate}}
         </p>
+      </div>
+      <div class="alert alert-warning">
+        <p text-left>
+          {{'ID_NOTE' | translate}}
+        </p>
+      </div>
       <form class="" [formGroup]="requestForm">
         <ion-item>
-          <ion-input placeholder="ID" formControlName="id"></ion-input>
+          <ion-input placeholder="ID/National ID/Iqama..." formControlName="id"></ion-input>
         </ion-item>
         <ion-item>
           <ion-input type="password" placeholder="Code" formControlName="code"></ion-input>
