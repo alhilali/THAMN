@@ -1,0 +1,137 @@
+<!--
+  Generated template for the ListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'INSURANCE_COS' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="custom-controls" [ngClass]="{'show': pushedDown}" [ngSwitch]="pushType">
+      <div class="search-container" *ngSwitchCase="'search'">
+          <ion-toolbar class="search-toolbar transparent-background">
+          <!-- <ion-toolbar class="search-toolbar"> -->
+            <ion-searchbar class="search-places-bar" placeholder="ابحث عن مطاعم" [(ngModel)]="searchQuery" (ionInput)="searchRestaurant()" (ionClear)="resetData()"></ion-searchbar>
+          </ion-toolbar>
+      </div>
+      <div class="filter-container" *ngSwitchCase="'filter'">
+          <ion-item-group class="filters-group">
+            <form [formGroup]="rangeForm">
+                <ion-list class="range-list">
+                  <ion-item class="range-item" dir="ltr">
+                    <ion-label>
+                      <h3 class="range-value">ريال {{rangeForm.controls.dual.value.lower}}</h3>
+                      <h2 class="range-label">{{ 'MINIMUM_AMOUNT' | translate }}</h2>
+                      <h3 class="range-value">ريال {{rangeForm.controls.dual.value.upper}}</h3>
+                    </ion-label>
+                    <ion-range dualKnobs="true" formControlName="dual" (ionChange)="rangeChange($event)" min="0" max="350" step="3" snaps="true" pin="false"></ion-range>
+                  </ion-item>
+                </ion-list>
+              </form>
+              <ion-item-divider>{{ 'OPTIONS' | translate }}</ion-item-divider>
+              <form [formGroup]="checkboxTagsForm">
+                <ion-list class="checkbox-tags rounded-tags">
+                  <ion-item class="checkbox-tag">
+                    <ion-label>
+                      <ion-row class="icon-row">
+                        <ion-icon name="cash"></ion-icon>
+                      </ion-row>
+                      <ion-row>
+                        الدفع عند الإستلام
+                      </ion-row>
+                    </ion-label>
+                    <ion-checkbox formControlName="cash" (ionChange)="filterUpdate($event)"></ion-checkbox>
+                  </ion-item>
+                  <ion-item class="checkbox-tag">
+                    <ion-label>
+                      <ion-row class="icon-row">
+                        <ion-icon name="card"></ion-icon>
+                      </ion-row>
+                      <ion-row>
+                        الدفع الإلكتروني
+                      </ion-row>
+                    </ion-label>
+                    <ion-checkbox formControlName="card" (ionChange)="filterUpdate($event)"></ion-checkbox>
+                  </ion-item>
+                </ion-list>
+              </form>
+          </ion-item-group>
+      </div>
+      <div class="location-container" *ngSwitchCase="'location'">
+        <div class="search-container">
+            <ion-toolbar class="search-toolbar transparent-background">
+              <ion-searchbar class="search-places-bar" placeholder="ابحث بإسم المنطقة" [(ngModel)]="locationSearchQuery" (ionInput)="searchLocations()" (ionClear)="clearSearch()"></ion-searchbar>
+            </ion-toolbar>
+        </div>
+        <ion-list class="accordion-list">
+              <!-- First Level -->
+              <span *ngFor="let item of information; let i = index">
+                <ion-list-header *ngIf="item && item.children && item.children.length > 0" no-lines no-padding>
+                  <!-- Toggle Button -->
+                  <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': item.open, 'section': !item.open}">
+                    {{ item.name }}
+                    <ion-icon item-right name="arrow-down" color="theme-color-2" *ngIf="!item.open"></ion-icon>
+                    <ion-icon item-right name="arrow-up" *ngIf="item.open"></ion-icon>
+                  </button>
+              
+                  <ion-list *ngIf="item && item.children && item.open" no-lines>
+                    <!-- Second Level -->
+                    <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>
+              
+                      <!-- Direct Add Button as Fallback -->
+                      <ion-item *ngIf="!child.children" ion-item detail-none class="child-item" text-wrap (click)="pickLocation(item, child)">
+                        <h4>{{ child.name }}</h4>
+                      </ion-item>
+              
+                    </ion-list-header>
+                  </ion-list>
+                  
+                </ion-list-header>
+              </span>
+        </ion-list>
+      </div>
+    </div>
+    <div class="listing-content" [ngClass]="'push-for-'+pushType">
+        <div class="list-mini">
+          <ion-list>
+            <button class="list-item" ion-item *ngFor="let provider of providers" (click)="goToProvider(provider)">
+              <ion-row no-padding class="content-row">
+                <!-- You can limit the rows of the description by using the class one-line. If you remove it, all the content from the row will be shown -->
+                <ion-col no-padding width-18 class="item-avatar">
+                  <img class="avatar-image" [src]="provider.img">
+                </ion-col>
+                <ion-col no-padding width-62 class="item-content">
+                  <h3 class="item-title">{{provider.name}}</h3>
+                  <p class="item-description">Riyadh, Saudi Arabia</p>
+                  <ion-row no-padding class="item-icons">
+                    <ion-list class="ratings-list">
+                        <ion-item class="rating-item">
+                          <button class="rating-icon" ion-button icon-only round *ngFor="let r of [1,2,3,4,5]; let i = index">
+                              <ion-icon [name]="value === undefined ? (r === 1 ? 'star' : (r === 2 ? 'star-half' : 'star-outline')) : (value > i ? (value < i+1 ? 'star-half' : 'star') : 'star-outline')"></ion-icon>
+                          </button>     
+                        </ion-item>
+                    </ion-list>
+                    <ion-icon class="item-icon" name="cash"></ion-icon>
+                    <ion-icon class="item-icon" name="card"></ion-icon>
+                  </ion-row>
+                </ion-col>
+                <ion-col class="item-end" no-padding width-20>
+                    <h6 class="label">Starting From:</h6>
+                    <h5 class="value"><span class="bold">{{provider.price}}</span></h5>
+                </ion-col>
+              </ion-row>
+            </button>
+          </ion-list>
+        </div>
+    </div>
+  </ion-content>

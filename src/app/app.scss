@@ -15,3 +15,18 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 @import "../theme/common";
+
+
+.top-menu {
+  background-color: $theme-color-2;
+  padding-bottom: 80px;
+  .logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .app-title {
+    color: white;
+  }
+}

@@ -1,0 +1,21 @@
+[
+	{
+		"name": "Buba Arabia",
+		"img": "./assets/imgs/providers/img1.jpg",
+		"description": "",
+		"price": "150",
+		"type": "provider"
+  },
+  {
+		"name": "Insurance Companies",
+		"img": "./assets/imgs/banners/image1.jpg",
+		"description": "",
+		"type": "providers"
+  },
+  {
+		"name": "",
+		"img": "./assets/imgs/banners/image2.jpg",
+		"description": "",
+		"type": ""
+  }
+]

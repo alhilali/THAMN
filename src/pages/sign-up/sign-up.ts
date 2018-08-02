@@ -35,12 +35,13 @@ export class SignUpPage {
   ) {
     this.signupFormStep1 = new FormGroup({
       email: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
-    });
-    this.signupFormStep2 = new FormGroup({
+      password: new FormControl('', Validators.required),
       id: new FormControl('', Validators.required)
     });
-    this.signupFormStep3 = new FormGroup({
+    // this.signupFormStep2 = new FormGroup({
+    //   id: new FormControl('', Validators.required)
+    // });
+    this.signupFormStep2 = new FormGroup({
       id: new FormControl('', Validators.required),
       name: new FormControl('', Validators.required),
       dob: new FormControl('', Validators.required)
@@ -61,16 +62,16 @@ export class SignUpPage {
     console.log(userInfo);
     
     if (userInfo) {
-      this.signupFormStep3.patchValue({
+      this.signupFormStep2.patchValue({
         id: userInfo.id,
         name: userInfo.name,
         dob: userInfo.dob,
       });
       this.statusMessage = "✅ We were able to find your information";
-      this.goToSlide(3);
+      this.goToSlide(2);
     } else {
       this.statusMessage = "❌ Couldn't find your information.";
-      this.goToSlide(3);
+      this.goToSlide(2);
     }
   }
 

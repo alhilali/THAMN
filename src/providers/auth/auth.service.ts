@@ -1,6 +1,8 @@
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { User, Credentials } from './auth.model';
+import { Events } from 'ionic-angular';
+
 
 @Injectable()
 export class AuthProvider {
@@ -9,7 +11,8 @@ export class AuthProvider {
   public isAuthorized: boolean = false
 
   constructor(
-    public http: Http
+    public http: Http,
+    public events: Events
   ) {
   }
 
@@ -17,7 +20,9 @@ export class AuthProvider {
     return this.http.get('./assets/example_data/profile.json')
     .toPromise()
     .then(response => {
+      this.isAuthorized = true;
       this.currentUser = response.json().response as User;
+      this.events.publish('user:activity', 'login');
       return this.currentUser;
     })
     .catch(this.handleError);
@@ -52,6 +57,7 @@ export class AuthProvider {
   }
 
   logout() {
+    this.events.publish('user:activity', 'logout');
     this.isAuthorized = false;
   }
 

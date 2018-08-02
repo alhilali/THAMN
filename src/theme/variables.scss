@@ -29,8 +29,8 @@ $white-b: darken($white, 6%);
 $white-c: darken($white, 12%);
 $white-d: darken($white, 24%);
 
-$theme-color-1: #64C004;
-$theme-color-2: rgb(162, 233, 70);
+$theme-color-1: #1B2C38;
+$theme-color-2: #224c69;
 $theme-color-3: #FFFFFF;
 
 $black: rgba(#000000, .8);
@@ -65,7 +65,7 @@ $colors: (
     contrast: $white
   ),
   button:(
-    base: $theme-color-1,
+    base: $theme-color-2,
     contrast: $white
   ),
   button-alt:(

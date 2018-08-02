@@ -7,6 +7,9 @@
 <ion-header>
 
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>{{'SIGN_UP' | translate}}</ion-title>
   </ion-navbar>
 
@@ -19,14 +22,21 @@
       <ion-slide>
       <ion-card class="card-theme">
           <ion-card-content>
+            <p text-center>
+              سيحاول النظام جلب معلوماتك عن طريق الرقم المدخل.
+              ملاحظة: من الممكن إدخال رقم الجواز، أو رقم الآحوال أو رقم الإقامة.
+            </p>
             <form class="signup-form auth-form" [formGroup]="signupFormStep1">
+              <ion-item>
+                <ion-input placeholder="ID" formControlName="id"></ion-input>
+              </ion-item>
               <ion-item>
                 <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
               </ion-item>
               <ion-item>
                 <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
               </ion-item>
-              <button ion-button block class="auth-action-button login-button" (click)="goToSlide(1)" [disabled]="!signupFormStep1.valid">{{'NEXT' | translate}}</button>
+              <button ion-button block class="auth-action-button login-button" (click)="lookupID(signupFormStep1.value)" [disabled]="!signupFormStep1.valid">{{'NEXT' | translate}}</button>
               <ion-row class="alt-options">
                 <ion-col no-padding width-50>
                   <button ion-button block clear class="signup-button" (click)="goToLogin()">{{'SIGN_IN' | translate}}</button>
@@ -38,7 +48,7 @@
           </ion-card-content>
       </ion-card>
       </ion-slide>
-      <ion-slide>
+      <!-- <ion-slide>
       <ion-card class="card-theme">
           <ion-card-content>
               <form class="signup-form auth-form" [formGroup]="signupFormStep2" (ngSubmit)="lookupID(signupFormStep2.value);">
@@ -53,18 +63,18 @@
                 </form>
           </ion-card-content>
       </ion-card>
-      </ion-slide>
+      </ion-slide> -->
       <ion-slide class="step3">
           <ion-card class="card-theme">
             <ion-card-content>
-              <form class="signup-form auth-form" [formGroup]="signupFormStep3" (ngSubmit)="signup(signupFormStep3.value);">
+              <form class="signup-form auth-form" [formGroup]="signupFormStep2" (ngSubmit)="signup(signupFormStep2.value);">
                 <p class="status-info" text-center>
                     {{statusMessage}}
                 </p>
-                <p class="sub-info" *ngIf="!signupFormStep3.value.id">
+                <p class="sub-info" *ngIf="!signupFormStep2.value.id">
                   Please fill out your information manually.
                 </p>
-                <p class="sub-info" *ngIf="signupFormStep3.value.id">
+                <p class="sub-info" *ngIf="signupFormStep2.value.id">
                     Please confirm information below.
                   </p>
                 <ion-item>
@@ -76,7 +86,7 @@
                 <ion-item>
                   <ion-input placeholder="Date of birth" formControlName="dob"></ion-input>
                 </ion-item>
-                <button ion-button block class="auth-action-button login-button" type="submit" [disabled]="!signupFormStep3.valid">{{'SIGN_UP' | translate}}</button>
+                <button ion-button block class="auth-action-button login-button" type="submit" [disabled]="!signupFormStep2.valid">{{'SIGN_UP' | translate}}</button>
               </form>
             </ion-card-content>
           </ion-card>

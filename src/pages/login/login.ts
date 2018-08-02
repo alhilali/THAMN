@@ -4,6 +4,7 @@ import { TabsPage } from '../tabs/tabs';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth.service';
 import { SignUpPage } from '../sign-up/sign-up';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the LoginPage page.
@@ -45,11 +46,11 @@ export class LoginPage {
     setTimeout(() => { // For demo purposes
       loadingSpinner.dismiss();
       if (loginInfo.token) {
-        this.navCtrl.setRoot(TabsPage);
+        this.navCtrl.setRoot(HomePage);
       } else {
         this.errorMessage = "Something was wrong!"
       }
-    }, 1500);
+    }, 1000);
   }
 
 

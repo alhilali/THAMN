@@ -13,6 +13,7 @@ import { DetailsPage } from '../pages/details/details';
 import { ProfilePage } from '../pages/profile/profile';
 import { SignUpPage } from '../pages/sign-up/sign-up';
 import { WelcomePage } from '../pages/welcome/welcome';
+import { ListPage } from '../pages/list/list';
 
 // Providers
 import { LanguageProvider } from '../providers/language/language.service';
@@ -43,6 +44,7 @@ export function createTranslateLoader(http: HttpClient) {
     ProfilePage,
     SignUpPage,
     WelcomePage,
+    ListPage,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +73,7 @@ export function createTranslateLoader(http: HttpClient) {
     ProfilePage,
     SignUpPage,
     WelcomePage,
+    ListPage,
   ],
   providers: [
     StatusBar,

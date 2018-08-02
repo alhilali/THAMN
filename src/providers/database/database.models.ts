@@ -4,3 +4,12 @@ export class ProviderModel {
   description: string;
   price: string;
 }
+
+
+export class BannerModel {
+  name: string;
+  img: string;
+  description: string;
+  type: string;
+  price?: string;
+}
