@@ -1,4 +1,7 @@
 # THAMN
+
+[Imgur](https://imgur.com/nyltcye)
+
 ## Inspiration
 
 With vision 2030, the Kingdom aims to facilitate the user's experience and provide effective health services. Our inspiration is that we don’t have international platforms that support all languages worldwide and enable the pilgrims to reach all insurance companies. Also, to address a really important challenge which is the unavailability of medical files belonging to international pilgrims. 
