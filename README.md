@@ -1,6 +1,7 @@
 # THAMN
 
-[Imgur](https://imgur.com/nyltcye)
+
+![THAMN Info](https://i.ibb.co/yqZqZpF/FEE6-FACF-7-A19-4-E79-BBCD-9-EEC7-F4446-D5.png)
 
 ## Inspiration
 
